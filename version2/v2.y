@@ -9,11 +9,18 @@ int puissance(int base, int exp);
 %}
 
 %token NOMBRE
+%token FIN_LIGNE
 
 %%
+programme
+    : programme ligne
+    | ligne
+    ;
 
-programme : expr                   { printf("Résultat = %d\n", $1); }
-          ;
+ligne
+    : expr FIN_LIGNE        { printf("Résultat = %d\n", $1); }
+    | FIN_LIGNE             { /* ligne vide ignorée */ }
+    ;
 
 expr      : expr '+' term          { $$ = $1 + $3; }
           | expr '-' term          { $$ = $1 - $3; }

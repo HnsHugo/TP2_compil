@@ -13,5 +13,5 @@ clean:
 	rm -f v2.tab.c v2.tab.h lex.yy.c calc
 
 test: calc
-	echo "23 + 45 * (12 + 25)" > expression.txt
+	echo "23 + 45 * (12 + 25)\n 25 + 25" > expression.txt
 	./calc

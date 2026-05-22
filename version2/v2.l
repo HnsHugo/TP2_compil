@@ -22,7 +22,8 @@
 "^"         { return '^'; }
 "("         { return '('; }
 ")"         { return ')'; }
-[ \t\n]     { /* ignorer espaces */ }
+[ \t]     { /* ignorer espaces */ }
+\n          { return FIN_LIGNE; }
 .           { fprintf(stderr, "Caractère inconnu : %s\n", yytext); }
 
 %%

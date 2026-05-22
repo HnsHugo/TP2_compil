@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 12
-#define YY_END_OF_BUFFER 13
+#define YY_NUM_RULES 13
+#define YY_END_OF_BUFFER 14
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -362,7 +362,7 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[18] =
     {   0,
-        0,    0,   13,   11,   10,   10,    6,    8,    9,    4,
+        0,    0,   14,   12,   10,   11,    6,    8,    9,    4,
         2,    3,    5,    1,    7,    1,    0
     } ;
 
@@ -780,22 +780,27 @@ YY_RULE_SETUP
 { return ')'; }
 	YY_BREAK
 case 10:
-/* rule 10 can match eol */
 YY_RULE_SETUP
 #line 25 "v2.l"
 { /* ignorer espaces */ }
 	YY_BREAK
 case 11:
+/* rule 11 can match eol */
 YY_RULE_SETUP
 #line 26 "v2.l"
-{ fprintf(stderr, "Caractère inconnu : %s\n", yytext); }
+{ return FIN_LIGNE; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 28 "v2.l"
+#line 27 "v2.l"
+{ fprintf(stderr, "Caractère inconnu : %s\n", yytext); }
+	YY_BREAK
+case 13:
+YY_RULE_SETUP
+#line 29 "v2.l"
 ECHO;
 	YY_BREAK
-#line 799 "lex.yy.c"
+#line 804 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1800,7 +1805,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 28 "v2.l"
+#line 29 "v2.l"
 
 
 int yywrap() { return 1; }

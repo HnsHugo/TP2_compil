@@ -54,7 +54,8 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    NOMBRE = 258                   /* NOMBRE  */
+    NOMBRE = 258,                  /* NOMBRE  */
+    FIN_LIGNE = 259                /* FIN_LIGNE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
